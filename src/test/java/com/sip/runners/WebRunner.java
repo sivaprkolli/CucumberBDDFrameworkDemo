@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"com/sip/steps"},
-        tags="@DirectData",
+        tags="@HomeTest",
         plugin = "pretty",
-        dryRun = true,
+        //dryRun = true,
         monochrome = true
 )
 public class WebRunner {
