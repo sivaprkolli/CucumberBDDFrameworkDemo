@@ -32,7 +32,7 @@ public class LoginSteps extends WebDriverfactory {
     @Then("User verify products page")
     public void user_verify_products_page() {
         allProductsPage = new AllProductsPage(driver);
-        Assert.assertEquals(allProductsPage.getNumberOfProducts(), 6);
+        Assert.assertEquals(allProductsPage.getNumberOfProducts(), 7);
     }
 
     @When("User enter credentials in the input fields")
