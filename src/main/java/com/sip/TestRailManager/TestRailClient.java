@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class TestRailClient {
 
-    private static final String BASE_URL = "https://automateapps.testrail.io/";
+    private static final String BASE_URL = "https://automateapps.testrail.io";
     private static final String API_USERNAME = "siva9kolli@gmail.com";
     private static final String API_TOKEN = "F87xoeghf19Eq1kWbS.U-8CY4EVsnitAfrYmtj.3D";
 

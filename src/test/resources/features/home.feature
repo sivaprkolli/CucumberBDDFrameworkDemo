@@ -1,6 +1,6 @@
 Feature: Login
 
-  @HomeTest @T3574
+  @HomeTest @T4073
   Scenario: Verify successful login
     Given User on login screen
     When User enter login credentials
@@ -8,7 +8,7 @@ Feature: Login
     Then User verify products page displayed
 
 
-  @HT2 @HomeTest @T3571
+  @HT2 @HomeTest @T4074
   Scenario Outline: Verify successful login with outline
     Given User on login screen
     When User enter login credentials "<username>" and "<password>"
@@ -18,7 +18,7 @@ Feature: Login
       | username     | password     |
       | StandardUser | secret_sauce |
 
-  @HT3 @HomeTest @T3572
+  @HT3 @HomeTest @T4075
   Scenario: Verify successful login with single row
     Given User on login screen
     When User enter login data
@@ -26,7 +26,7 @@ Feature: Login
     And User click on submit button
     Then User verify products page displayed
 
-  @HT4 @HomeTest @T3573
+  @HT4 @HomeTest @T4076
   Scenario: Verify successful login with row header
     Given User on login screen
     When User enter login data with row header

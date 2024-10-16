@@ -2,17 +2,22 @@ package com.sip.Hooks;
 
 import com.sip.Automation.WebDriverfactory;
 import com.sip.TestRailManager.TestRailClient;
+import com.sip.TestRailManager.TestRailReporter;
 import io.cucumber.java.*;
+
+import java.io.IOException;
 
 import static com.sip.ExtentManager.ExtentReportManager.closeReport;
 import static com.sip.ExtentManager.ExtentReportManager.generateReport;
 
 public class Hooks {
 
-    private static final int RUN_ID = 16;  // Replace with your TestRail run ID
+    private static final int RUN_ID = 18;  // Replace with your TestRail run ID
+    public String testCaseId = "3571";
 
     @BeforeAll
     public static void initializeDrivers() {
+
         generateReport();
         WebDriverfactory.intializeDrivers();
     }
@@ -48,6 +53,24 @@ public class Hooks {
 
     @After
     public void afterScenario(Scenario scenario) {
+      /* if (scenario.isFailed()){
+           try {
+               TestRailReporter.addResultForTestCase(testCaseId, TestRailReporter.TEST_CASE_FAILED_STATUS, "");
+           } catch (IOException e) {
+               e.printStackTrace();
+           } catch (APIException e) {
+               e.printStackTrace();
+           }
+       }else{
+           try {
+               TestRailReporter.addResultForTestCase(testCaseId, TestRailReporter.TEST_CASE_FAILED_STATUS, "");
+           } catch (IOException e) {
+               e.printStackTrace();
+           } catch (APIException e) {
+               e.printStackTrace();
+           }
+       }*/
+
         String testCaseId = extractTestCaseIdFromTags(scenario);
         int caseId = Integer.parseInt(testCaseId);  // Convert the case ID from your tags
 
