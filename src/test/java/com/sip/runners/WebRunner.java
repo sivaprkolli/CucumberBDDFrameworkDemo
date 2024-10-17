@@ -10,7 +10,6 @@ import org.junit.runner.RunWith;
         glue = {"com/sip/steps", "com/sip/Hooks"},
         tags="@HomeTest",
         plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "rerun:target/failed.txt"},
-        //dryRun = true,
         monochrome = true
 )
 public class WebRunner {
