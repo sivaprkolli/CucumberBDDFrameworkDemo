@@ -2,10 +2,7 @@ package com.sip.Hooks;
 
 import com.sip.Automation.WebDriverfactory;
 import com.sip.TestRailManager.TestRailClient;
-import com.sip.TestRailManager.TestRailReporter;
 import io.cucumber.java.*;
-
-import java.io.IOException;
 
 import static com.sip.ExtentManager.ExtentReportManager.closeReport;
 import static com.sip.ExtentManager.ExtentReportManager.generateReport;
@@ -49,35 +46,13 @@ public class Hooks {
         closeReport();
     }
 
-
-
     @After
     public void afterScenario(Scenario scenario) {
-      /* if (scenario.isFailed()){
-           try {
-               TestRailReporter.addResultForTestCase(testCaseId, TestRailReporter.TEST_CASE_FAILED_STATUS, "");
-           } catch (IOException e) {
-               e.printStackTrace();
-           } catch (APIException e) {
-               e.printStackTrace();
-           }
-       }else{
-           try {
-               TestRailReporter.addResultForTestCase(testCaseId, TestRailReporter.TEST_CASE_FAILED_STATUS, "");
-           } catch (IOException e) {
-               e.printStackTrace();
-           } catch (APIException e) {
-               e.printStackTrace();
-           }
-       }*/
-
         String testCaseId = extractTestCaseIdFromTags(scenario);
         int caseId = Integer.parseInt(testCaseId);  // Convert the case ID from your tags
 
         int statusId = scenario.isFailed() ? 5 : 1;  // 5=Failed, 1=Passed
         String comment = scenario.isFailed() ? scenario.getName() + " failed" : "Test passed";
-
-        // Submit the test result to TestRail
         TestRailClient.addTestResult(RUN_ID, caseId, statusId, comment);
     }
 
@@ -91,12 +66,8 @@ public class Hooks {
         throw new IllegalArgumentException("Test case ID not found in scenario tags");
     }
 
-
     public static void addReport(Scenario method){
         WebDriverfactory wf = new WebDriverfactory();
         wf.reportTest(method);
     }
-
-
-
 }

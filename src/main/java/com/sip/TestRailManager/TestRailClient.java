@@ -13,9 +13,9 @@ public class TestRailClient {
     private static final String BASE_URL = "https://automateapps.testrail.io";
     private static final String API_USERNAME = "siva9kolli@gmail.com";
     private static final String API_TOKEN = "F87xoeghf19Eq1kWbS.U-8CY4EVsnitAfrYmtj.3D";
-
+    private static final String API_PASSWORD = "Appium@123";
     private static String getAuthHeader() {
-        String auth = API_USERNAME + ":" + API_TOKEN;
+        String auth = API_USERNAME + ":" + API_PASSWORD;
         return Base64.getEncoder().encodeToString(auth.getBytes());
     }
 

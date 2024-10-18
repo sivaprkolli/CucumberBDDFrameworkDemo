@@ -33,6 +33,7 @@ public class HomeSteps {
         System.out.println("user_verify_products_page_displayed");
 
         System.out.println("context value " + context.getContext("USERNAME"));
+        Assert.assertTrue(false);
     }
 
     @When("User enter login credentials {string} and {string}")
