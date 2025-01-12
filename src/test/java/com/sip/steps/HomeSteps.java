@@ -23,6 +23,7 @@ public class HomeSteps {
     @When("User enter login credentials")
     public void user_enter_login_credentials() {
         System.out.println("user_enter_login_credentials");
+        Assert.assertEquals(1,2);
     }
     @When("User click on submit button")
     public void user_click_on_submit_button() {

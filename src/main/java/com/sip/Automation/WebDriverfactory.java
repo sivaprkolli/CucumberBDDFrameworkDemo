@@ -1,10 +1,10 @@
 package com.sip.Automation;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+//import com.aventstack.extentreports.ExtentReports;
+//import com.aventstack.extentreports.ExtentTest;
+//import com.aventstack.extentreports.MediaEntityBuilder;
+//import com.aventstack.extentreports.Status;
+//import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,9 +15,9 @@ import java.lang.reflect.Method;
 public class WebDriverfactory {
     protected static WebDriver driver;
 
-    public static ExtentSparkReporter htmlReporter;
-    public static ExtentReports extent;
-    public static ExtentTest test;
+//    public static ExtentSparkReporter htmlReporter;
+//    public static ExtentReports extent;
+//    public static ExtentTest test;
 
     public static void intializeDrivers() {
 
@@ -34,14 +34,14 @@ public class WebDriverfactory {
     }
 
     public void reportTest(Scenario method) {
-        test = extent.createTest(this.getClass().getSimpleName() + "::" + method.getName());
+      //  test = extent.createTest(this.getClass().getSimpleName() + "::" + method.getName());
     }
 
     public void getScreenshotForFailure(){
-        test.log(Status.FAIL, "");
-
-        test.fail("details",
-                MediaEntityBuilder.createScreenCaptureFromBase64String("Test").build());
+//        test.log(Status.FAIL, "");
+//
+//        test.fail("details",
+//                MediaEntityBuilder.createScreenCaptureFromBase64String("Test").build());
 
     }
 

@@ -7,8 +7,8 @@ import io.cucumber.java.*;
 
 import java.io.IOException;
 
-import static com.sip.ExtentManager.ExtentReportManager.closeReport;
-import static com.sip.ExtentManager.ExtentReportManager.generateReport;
+//import static com.sip.ExtentManager.ExtentReportManager.closeReport;
+//import static com.sip.ExtentManager.ExtentReportManager.generateReport;
 
 public class Hooks {
 
@@ -18,7 +18,7 @@ public class Hooks {
     @BeforeAll
     public static void initializeDrivers() {
 
-        generateReport();
+        //generateReport();
         WebDriverfactory.intializeDrivers();
     }
 
@@ -46,7 +46,7 @@ public class Hooks {
             WebDriverfactory wf = new WebDriverfactory();
             wf.getScreenshotForFailure();
         }
-        closeReport();
+     //   closeReport();
     }
 
 
