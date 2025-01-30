@@ -34,3 +34,4 @@ Feature: Login
       | StandardUser | secret_sauce |
     And User click on submit button
     Then User verify products page displayed
+    Then User verify single product

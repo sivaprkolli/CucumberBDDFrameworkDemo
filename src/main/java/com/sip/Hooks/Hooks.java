@@ -1,9 +1,12 @@
 package com.sip.Hooks;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.GherkinKeyword;
 import com.sip.Automation.WebDriverfactory;
 import com.sip.TestRailManager.TestRailClient;
 import io.cucumber.java.*;
 
+import static com.sip.Automation.WebDriverfactory.extent;
 import static com.sip.ExtentManager.ExtentReportManager.closeReport;
 import static com.sip.ExtentManager.ExtentReportManager.generateReport;
 
@@ -44,6 +47,16 @@ public class Hooks {
             wf.getScreenshotForFailure();
         }
         closeReport();
+    }
+
+    public void cucumberTags() throws ClassNotFoundException {
+        ExtentTest feature = extent.createTest(new GherkinKeyword("Feature"), "Refund item");
+
+        ExtentTest scenario = feature.createNode(new GherkinKeyword("Scenario") , "Jeff returns a faulty microwave");
+        scenario.createNode(new GherkinKeyword("Given"), "Jeff has bought a microwave for $100").pass("pass");
+        scenario.createNode(new GherkinKeyword("And"), "he has a receipt").pass("pass");
+        scenario.createNode(new GherkinKeyword("When"), "he returns the microwave").pass("pass");
+        scenario.createNode(new GherkinKeyword("Then"), "Jeff should be refunded $100").fail("fail");
     }
 
     @After

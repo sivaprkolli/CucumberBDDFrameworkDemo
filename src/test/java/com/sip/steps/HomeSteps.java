@@ -3,9 +3,8 @@ package com.sip.steps;
 import com.sip.Utilities.Context;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
-import org.junit.Assert;
+import org.testng.Assert;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 import java.util.Map;
 
@@ -33,7 +32,7 @@ public class HomeSteps {
         System.out.println("user_verify_products_page_displayed");
 
         System.out.println("context value " + context.getContext("USERNAME"));
-        Assert.assertTrue(false);
+        Assert.assertTrue(true);
     }
 
     @When("User enter login credentials {string} and {string}")
@@ -64,5 +63,10 @@ public class HomeSteps {
         System.out.println("un ::" + username);
         System.out.println("password :: " + pwd);
         context.setContext("USERNAME", username);
+    }
+
+    @Then("User verify single product")
+    public void userVerifySingleProduct() {
+        Assert.assertTrue(false);
     }
 }
